@@ -12,7 +12,7 @@ class Android3 : AppCompatActivity() {
     }
 
     fun bnt3(view: View) {
-        val intent = Intent(this, reg::class.java)
+        val intent = Intent(this, SignInActivity::class.java)
         startActivity(intent)
     }
 }

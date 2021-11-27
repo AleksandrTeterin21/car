@@ -3,21 +3,19 @@ package com.example.carservice
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.util.Patterns
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import java.util.regex.Pattern.compile
 
-class reg : AppCompatActivity() {
+class SignInActivity : AppCompatActivity() {
     lateinit var email: EditText
-    lateinit var password:EditText
+    lateinit var password: EditText
     lateinit var pattern:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reg)
+        setContentView(R.layout.activity_sign_in)
         email = findViewById(R.id.email_login)
         password = findViewById(R.id.password_login)
         pattern =("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,50}" +
@@ -33,8 +31,8 @@ class reg : AppCompatActivity() {
     fun login(view: View) {
         if (email.text.isNotEmpty() && password.text.isNotEmpty()) {
             if (EmailValid(email.text.toString())) {
-Toast.makeText(this,"dfffff",Toast.LENGTH_SHORT).show()
-                val inten = Intent(this,Menu1::class.java)
+Toast.makeText(this,"Вы успешно зашли",Toast.LENGTH_SHORT).show()
+                val intent = Intent(this,Menu1::class.java)
                 startActivity(intent)
             }
             else{
